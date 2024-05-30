@@ -21,11 +21,11 @@ public class App
         configuration.configure("hibernate.cfg.xml");
         configuration.addAnnotatedClass(Programming.class);
 
-        try (SessionFactory sessionFactory = configuration.buildSessionFactory()){
+        try (SessionFactory sessionFactory = configuration.buildSessionFactory()){ //HACE TEST CON EL SQL SERVER //SI FALLA NO CONECTA
 
             Session session = sessionFactory.openSession();
 
-            Programming programming = new Programming();
+            Programming programming = new Programming(); //OBJETO QUE NO PERTENECE A SQL
             programming.setId(1);
             programming.setName("JAVA");
             programming.setDescription("Open Sources");
@@ -35,7 +35,7 @@ public class App
             session.beginTransaction();
 
             // INI COMANDO PARA GRABAR
-            //session.persist(programming);
+            //session.persist(programming);//CONEXION SQL SERVER
             // FIN COMANDO PARA GRABAR
 
 
