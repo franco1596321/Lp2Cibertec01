@@ -26,10 +26,10 @@ public class App
             Session session = sessionFactory.openSession();
 
             Programming programming = new Programming(); //OBJETO QUE NO PERTENECE A SQL
-            programming.setId(1);
-            programming.setName("JAVA");
-            programming.setDescription("Open Sources");
-            programming.setStatus('A');
+            programming.setId(1);                           //OBJETO
+            programming.setName("JAVA");                    //OBJETO
+            programming.setDescription("Open Sources");     //OBJETO
+            programming.setStatus('A');                     //OBJETOz
 
             //INICIO OPERACION(ES)
             session.beginTransaction();
@@ -43,12 +43,12 @@ public class App
 
             List<Programming> listado = new ArrayList<>();
 
-            listado = session.createQuery("from Programming", Programming.class).list();
+            listado = session.createQuery("from Programming", Programming.class).list(); //cargar el array con la tabla de la bd //PROGRAMMING ES LA CLASE*
 
             // FIN COMANDO PARA LEER
 
             //CIERRE OPERACION(ES)
-            session.getTransaction().commit();
+            session.getTransaction().commit(); //EL COMMIT HACE QUETODO SE REFLEJE EN LA BASE DE DATOS
 
 
 
