@@ -13,7 +13,6 @@ import java.util.Optional;
 
 // LOGICA DE NEGOCIO (VALIDACIONES; CONVERTIR OBJETOS, PROCESAR INFORMACION)
 @Service
-@Qualifier("PetServices")
 public class PetServices implements IPetServices {
 
     IPetRepository _petRepository;
@@ -48,4 +47,4 @@ public class PetServices implements IPetServices {
     public List<Pet> SearchPets(String name) {
         return null;
     }
-        }
+}

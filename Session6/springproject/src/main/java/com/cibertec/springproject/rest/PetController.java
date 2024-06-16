@@ -3,7 +3,6 @@ package com.cibertec.springproject.rest;
 
 import com.cibertec.springproject.model.Pet;
 import com.cibertec.springproject.services.IPetServices;
-import com.cibertec.springproject.services.Impl.PetServicesMock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +22,7 @@ public class PetController {
     IPetServices petServices;
 
     @Autowired
-    public PetController(@Qualifier("PetServicesMock") IPetServices  petServices) {
+    public PetController(@Qualifier("original")IPetServices petServices) {
         this.petServices=petServices;
     }
 
